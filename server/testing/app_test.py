@@ -11,6 +11,7 @@ class TestApp:
         with app.app_context():
             response = app.test_client().get('/articles/1')
             response_json = response.get_json()
+            print(response_json)
 
             assert(response_json.get('author'))
             assert(response_json.get('title'))
